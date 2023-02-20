@@ -3,6 +3,7 @@ import { GraphQLModule } from "@nestjs/graphql"
 import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo"
 import { join } from "path"
 import { UserModule } from "@app/user/user.module"
+import { CryptographyModule } from "./cryptography/cryptography.module"
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { UserModule } from "@app/user/user.module"
       autoSchemaFile: join(process.cwd(), "src", "schema.gql"),
     }),
     UserModule,
+    CryptographyModule,
   ],
 })
 export class AppModule {}
